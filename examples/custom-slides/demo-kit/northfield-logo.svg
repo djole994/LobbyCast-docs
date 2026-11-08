@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Northfield University — fictional demo logo -->
+  <circle cx="256" cy="256" r="240" fill="#1F4E3D"/>
+  <circle cx="256" cy="256" r="214" fill="none" stroke="#C9A227" stroke-width="6"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#C9A227" stroke-width="1.5" opacity="0.6"/>
+
+  <g transform="translate(0,14)">
+    <!-- north star -->
+    <path d="M256,96 L265,158 L298,168 L265,178 L256,236 L247,178 L214,168 L247,158 Z" fill="#C9A227"/>
+    <circle cx="256" cy="168" r="6" fill="#1F4E3D"/>
+
+    <!-- open book -->
+    <path d="M252,266 C222,248 182,244 140,252 L140,358 C182,350 222,354 252,374 Z" fill="#F5EFD9"/>
+    <path d="M260,266 C290,248 330,244 372,252 L372,358 C330,350 290,354 260,374 Z" fill="#F5EFD9"/>
+
+    <!-- page lines -->
+    <g fill="none" stroke="#1F4E3D" stroke-width="4" stroke-linecap="round" opacity="0.55">
+      <path d="M160,282 C188,277 214,280 236,290"/>
+      <path d="M160,306 C188,301 214,304 236,314"/>
+      <path d="M160,330 C188,325 214,328 236,338"/>
+      <path d="M352,282 C324,277 298,280 276,290"/>
+      <path d="M352,306 C324,301 298,304 276,314"/>
+      <path d="M352,330 C324,325 298,328 276,338"/>
+    </g>
+
+    <!-- base -->
+    <path d="M136,372 C182,364 226,370 256,390 C286,370 330,364 376,372" fill="none" stroke="#C9A227" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>

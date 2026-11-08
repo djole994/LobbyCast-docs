@@ -1,0 +1,101 @@
+/* LobbyCast example slide. Fictional data. © Đorđe Radović, see LICENSE.md */
+.nf-slide, .nf-slide * { box-sizing: border-box; margin: 0; }
+
+.nf-slide {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 110px 70px;
+  font-family: Inter, sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #0B1020 0%, #141B36 55%, #0B1020 100%);
+}
+
+/* colour glows follow Settings → Main / Accent colour */
+.nf-glow {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  opacity: .45;
+}
+.nf-glow-a { top: -450px; left: -300px; background: radial-gradient(circle, var(--brand), transparent 65%); }
+.nf-glow-b { bottom: -500px; right: -250px; background: radial-gradient(circle, var(--accent), transparent 65%); }
+
+.nf-top, .nf-hero, .nf-cards, .nf-bottom { position: relative; }
+
+.nf-top { display: flex; align-items: center; gap: 24px; }
+.nf-logo {
+  width: 88px;
+  height: 88px;
+  padding: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.nf-org { font-family: Manrope, Inter, sans-serif; font-size: 30px; font-weight: 700; }
+.nf-badge {
+  margin-left: auto;
+  padding: 12px 26px;
+  border-radius: 40px;
+  background: var(--accent);
+  color: #0B1020;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.nf-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.nf-kicker { font-size: 32px; font-weight: 600; color: var(--accent); letter-spacing: .03em; }
+.nf-hero h1 {
+  margin-top: 18px;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 200px;
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+.nf-hero h1 span {
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--brand) 55%, #fff));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nf-lead { margin-top: 32px; max-width: 1150px; font-size: 38px; line-height: 1.4; color: rgba(255, 255, 255, .75); }
+
+.nf-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.nf-card {
+  padding: 34px 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-top: 5px solid var(--accent);
+}
+.nf-card b { display: block; font-family: Manrope, Inter, sans-serif; font-size: 36px; font-weight: 700; }
+.nf-card span { display: block; margin-top: 10px; font-size: 24px; line-height: 1.35; color: rgba(255, 255, 255, .65); }
+
+.nf-bottom {
+  margin-top: 44px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: 24px;
+  color: rgba(255, 255, 255, .6);
+}
+
+/* entrance animations – start when the slide appears */
+@keyframes nf-rise {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: none; }
+}
+.show .nf-top    { animation: nf-rise .8s ease both; }
+.show .nf-kicker { animation: nf-rise .8s .15s ease both; }
+.show .nf-hero h1 { animation: nf-rise .9s .3s ease both; }
+.show .nf-lead   { animation: nf-rise .9s .45s ease both; }
+.show .nf-card   { animation: nf-rise .8s ease both; }
+.show .nf-card:nth-child(1) { animation-delay: .6s; }
+.show .nf-card:nth-child(2) { animation-delay: .72s; }
+.show .nf-card:nth-child(3) { animation-delay: .84s; }
+.show .nf-bottom { animation: nf-rise .8s 1s ease both; }

@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant TV as TV player (mini PC)
+    participant App as LobbyCast server
+    participant Admin as Admin dashboard
+
+    TV->>App: Open the player page
+    App-->>TV: Show a 6-character pairing code
+    Admin->>App: Enter the code, choose a screen, optional device name
+    App->>App: Check the licence and link the device to the screen
+    App-->>TV: Device paired, send playlist and settings
+    TV->>TV: Store the pairing in the browser and start playback

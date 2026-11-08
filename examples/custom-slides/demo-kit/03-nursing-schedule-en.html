@@ -1,0 +1,80 @@
+<!-- LobbyCast demo slide: 03-nursing-schedule-en (Northfield University — fictional demo data) -->
+<style>
+body:has(> .nf-slide){margin:0;background:#0A1613;}.nf-slide{position:relative;width:100%;aspect-ratio:16/9;container-type:inline-size;overflow:hidden;background:#0A1613;}.nf-slide *{box-sizing:border-box;margin:0;padding:0;}.nf-in{position:absolute;inset:0;display:flex;flex-direction:column;padding:2.292cqi 2.917cqi 1.875cqi;font-family:Inter,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#EEF2EE;line-height:1.25;font-feature-settings:"tnum" 1,"cv11" 1;-webkit-font-smoothing:antialiased;background:radial-gradient(57.292cqi 33.854cqi at 88% -12%,rgba(201,162,39,.13),transparent 62%),radial-gradient(49.479cqi 32.292cqi at -8% 112%,rgba(46,110,86,.55),transparent 62%),linear-gradient(160deg,#0E231C 0%,#0A1714 55%,#08120F 100%);}.nf-in svg{display:block;width:100%;height:100%;}
+/* header */
+.nf-head{display:flex;align-items:center;gap:1.354cqi;padding-bottom:1.250cqi;border-bottom:0.078cqi solid rgba(255,255,255,.09);}.nf-logo{flex:none;width:4.583cqi;height:4.583cqi;border-radius:50%;background:#fff;padding:0.260cqi;box-shadow:0 0.312cqi 1.250cqi rgba(0,0,0,.35);}.nf-eyebrow{display:flex;align-items:center;gap:0.521cqi;font-size:0.781cqi;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#E3BF4A;}.nf-dot{width:0.469cqi;height:0.469cqi;border-radius:50%;background:#E3BF4A;box-shadow:0 0 0 0.208cqi rgba(227,191,74,.18);}.nf-title{font-size:2.812cqi;font-weight:700;letter-spacing:-.015em;margin-top:0.208cqi;}.nf-sp{flex:1;}.nf-meta{text-align:right;}.nf-date{font-size:1.094cqi;font-weight:500;color:#D6DED9;}.nf-org{font-size:0.781cqi;color:#8FA59B;margin-top:0.260cqi;letter-spacing:.02em;}.nf-clock{font-size:3.958cqi;font-weight:700;letter-spacing:-.02em;padding-left:1.562cqi;margin-left:0.312cqi;border-left:0.078cqi solid rgba(255,255,255,.12);line-height:1;}
+/* schedule grid */
+.nf-grid{flex:1;min-height:0;display:grid;gap:0.938cqi;margin-top:1.354cqi;}.nf-col{display:flex;flex-direction:column;gap:0.625cqi;min-width:0;padding:0.833cqi;border-radius:0.938cqi;background:rgba(255,255,255,.028);border:0.078cqi solid rgba(255,255,255,.06);}.nf-colhead{display:flex;align-items:baseline;justify-content:space-between;padding:0.104cqi 0.208cqi 0.521cqi;border-bottom:0.078cqi solid rgba(255,255,255,.07);}.nf-colhead b{font-size:1.146cqi;font-weight:700;}.nf-colhead span{font-size:0.729cqi;color:#8FA59B;}.nf-card{position:relative;padding:0.729cqi 0.833cqi 0.781cqi 1.042cqi;border-radius:0.677cqi;background:rgba(255,255,255,.055);border:0.078cqi solid rgba(255,255,255,.05);overflow:hidden;}.nf-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0.260cqi;background:var(--c);}.nf-card.past{opacity:.42;}.nf-card.now{background:linear-gradient(135deg,rgba(201,162,39,.20),rgba(201,162,39,.07));border-color:rgba(227,191,74,.6);box-shadow:0 0 1.458cqi rgba(201,162,39,.18);}.nf-time{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.312cqi 0.417cqi;font-size:0.990cqi;font-weight:700;color:#F4F1E6;}.nf-time > span:first-child,.nf-nw{white-space:nowrap;}.nf-card.chg{border-color:rgba(255,123,107,.35);}.nf-card.chg .nf-hl{color:#FF9A8C;}.nf-tag{font-size:0.625cqi;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:0.208cqi 0.469cqi;border-radius:1.042cqi;line-height:1;white-space:nowrap;}.nf-tag.now{background:#E3BF4A;color:#1A1606;}.nf-tag.chg{background:rgba(255,123,107,.16);color:#FF7B6B;border:0.062cqi solid rgba(255,123,107,.5);}.nf-subj{font-size:1.094cqi;font-weight:600;margin-top:0.312cqi;line-height:1.2;}.nf-row{display:flex;flex-wrap:wrap;align-items:center;gap:0.312cqi 0.521cqi;margin-top:0.469cqi;font-size:0.781cqi;color:#C4D0CA;}.nf-pill{font-size:0.625cqi;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:0.208cqi 0.469cqi;border-radius:0.312cqi;color:var(--c);background:color-mix(in srgb,var(--c) 17%,transparent);line-height:1.1;white-space:nowrap;}.nf-where{margin-top:0.365cqi;font-size:0.781cqi;color:#97AAA1;line-height:1.35;}.nf-where strong{color:#C4D0CA;font-weight:500;}.nf-prog{position:absolute;left:0;right:0;bottom:0;height:0.208cqi;background:rgba(255,255,255,.06);}.nf-prog i{display:block;height:100%;background:#E3BF4A;}
+/* footer */
+.nf-foot{display:flex;align-items:center;gap:1.146cqi;margin-top:1.146cqi;font-size:0.781cqi;color:#97AAA1;}.nf-leg{display:flex;align-items:center;gap:0.417cqi;}.nf-leg i{width:0.625cqi;height:0.625cqi;border-radius:0.156cqi;background:var(--c);}.nf-note{display:flex;align-items:center;gap:0.625cqi;padding:0.521cqi 0.938cqi 0.521cqi 0.729cqi;border-radius:1.562cqi;background:rgba(255,123,107,.10);border:0.078cqi solid rgba(255,123,107,.38);color:#F6D9D3;font-size:0.833cqi;}.nf-note .nf-ic{width:1.146cqi;height:1.146cqi;color:#FF7B6B;flex:none;}.nf-note b{color:#fff;font-weight:600;}.nf-foot .nf-org2{color:#7E958B;}
+/* exams */
+.nf-exams{flex:1;min-height:0;margin-top:1.354cqi;display:flex;flex-direction:column;border-radius:0.938cqi;overflow:hidden;background:rgba(255,255,255,.028);border:0.078cqi solid rgba(255,255,255,.06);}.nf-tr{display:grid;grid-template-columns:10.938cqi 6.250cqi 1fr 15.625cqi 9.896cqi 15.104cqi;align-items:center;gap:1.042cqi;padding:0 1.458cqi;}.nf-th{height:3.021cqi;font-size:0.677cqi;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8FA59B;background:rgba(255,255,255,.03);border-bottom:0.078cqi solid rgba(255,255,255,.07);}.nf-td{flex:1;font-size:1.094cqi;border-bottom:0.078cqi solid rgba(255,255,255,.05);}.nf-td.first{border-top:0.078cqi solid rgba(255,255,255,.10);}.nf-td:nth-child(2){border-top:none;}.nf-day b{display:block;font-size:1.146cqi;font-weight:700;color:#F4F1E6;}.nf-day span{font-size:0.781cqi;color:#E3BF4A;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}.nf-ex-time{font-weight:700;color:#F4F1E6;}.nf-course{display:flex;align-items:center;gap:0.729cqi;font-weight:600;min-width:0;}.nf-muted{color:#B5C3BC;font-size:0.990cqi;}.nf-exfoot{display:flex;align-items:center;gap:0.729cqi;margin-top:1.146cqi;font-size:0.885cqi;color:#B5C3BC;}.nf-exfoot .nf-ic{width:1.354cqi;height:1.354cqi;color:#E3BF4A;}.nf-sep{width:0.260cqi;height:0.260cqi;border-radius:50%;background:#56695F;}
+/* event */
+.nf-ev{flex:1;min-height:0;display:grid;grid-template-columns:1.35fr 1fr;gap:3.125cqi;align-items:center;margin-top:0.521cqi;}.nf-ev-kicker{display:inline-flex;align-items:center;gap:0.521cqi;font-size:0.885cqi;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1A1606;background:#E3BF4A;padding:0.469cqi 0.938cqi;border-radius:1.562cqi;}.nf-ev-title{font-size:4.062cqi;font-weight:800;letter-spacing:-.025em;line-height:1.04;margin-top:1.458cqi;}.nf-ev-title em{font-style:normal;color:#E3BF4A;}.nf-ev-sub{font-size:1.250cqi;color:#C4D0CA;margin-top:1.146cqi;line-height:1.4;max-width:46.875cqi;}.nf-speaker{display:flex;align-items:center;gap:1.042cqi;margin-top:1.875cqi;}.nf-avatar{width:3.958cqi;height:3.958cqi;border-radius:50%;display:grid;place-items:center;font-size:1.354cqi;font-weight:700;color:#1A1606;background:linear-gradient(135deg,#E3BF4A,#B98F1E);flex:none;}.nf-speaker b{display:block;font-size:1.458cqi;font-weight:700;}.nf-speaker span{font-size:0.990cqi;color:#97AAA1;}.nf-chips{display:flex;flex-wrap:wrap;gap:0.729cqi;margin-top:1.875cqi;}.nf-chip{display:flex;align-items:center;gap:0.521cqi;font-size:0.990cqi;font-weight:500;padding:0.625cqi 1.042cqi 0.625cqi 0.833cqi;border-radius:0.729cqi;background:rgba(255,255,255,.06);border:0.078cqi solid rgba(255,255,255,.08);}.nf-chip .nf-ic{width:1.250cqi;height:1.250cqi;color:#E3BF4A;flex:none;}.nf-art{position:relative;justify-self:center;width:29.167cqi;height:29.167cqi;}.nf-ring{position:absolute;border-radius:50%;border:0.104cqi solid rgba(227,191,74,.35);}.nf-ring.r1{inset:0;}.nf-ring.r2{inset:2.344cqi;border-color:rgba(227,191,74,.22);border-style:dashed;}.nf-ring.r3{inset:4.948cqi;border-color:rgba(108,195,176,.30);}.nf-orb{position:absolute;border-radius:50%;}.nf-orb.o1{width:1.354cqi;height:1.354cqi;background:#E3BF4A;top:2.083cqi;left:6.250cqi;box-shadow:0 0 1.562cqi rgba(227,191,74,.7);}.nf-orb.o2{width:0.833cqi;height:0.833cqi;background:#6CC3B0;bottom:5.729cqi;right:1.458cqi;box-shadow:0 0 1.250cqi rgba(108,195,176,.7);}.nf-orb.o3{width:0.625cqi;height:0.625cqi;background:#C79BE8;bottom:1.875cqi;left:8.854cqi;}.nf-datecard{position:absolute;inset:6.354cqi;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 25%,#1F4E3D,#10291F 70%);border:0.104cqi solid rgba(227,191,74,.55);box-shadow:0 1.042cqi 3.125cqi rgba(0,0,0,.45);}.nf-datecard span{font-size:1.042cqi;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E3BF4A;}.nf-datecard b{font-size:6.250cqi;font-weight:800;line-height:1;margin:0.208cqi 0;letter-spacing:-.03em;}.nf-datecard i{font-style:normal;font-size:1.146cqi;color:#C4D0CA;}.nf-evfoot{display:flex;align-items:center;gap:0.729cqi;font-size:0.885cqi;color:#97AAA1;padding-top:1.042cqi;border-top:0.078cqi solid rgba(255,255,255,.08);}.nf-evfoot b{color:#EEF2EE;font-weight:600;}
+</style>
+<div class="nf-slide"><div class="nf-in">
+<header class="nf-head">
+  <div class="nf-logo"><svg viewBox="0 0 512 512" aria-hidden="true"><circle cx="256" cy="256" r="240" fill="#1F4E3D"/><circle cx="256" cy="256" r="214" fill="none" stroke="#C9A227" stroke-width="6"/><circle cx="256" cy="256" r="200" fill="none" stroke="#C9A227" stroke-width="1.5" opacity="0.6"/><g transform="translate(0,14)"><path d="M256,96 L265,158 L298,168 L265,178 L256,236 L247,178 L214,168 L247,158 Z" fill="#C9A227"/><circle cx="256" cy="168" r="6" fill="#1F4E3D"/><path d="M252,266 C222,248 182,244 140,252 L140,358 C182,350 222,354 252,374 Z" fill="#F5EFD9"/><path d="M260,266 C290,248 330,244 372,252 L372,358 C330,350 290,354 260,374 Z" fill="#F5EFD9"/><g fill="none" stroke="#1F4E3D" stroke-width="4" stroke-linecap="round" opacity="0.55"><path d="M160,282 C188,277 214,280 236,290"/><path d="M160,306 C188,301 214,304 236,314"/><path d="M160,330 C188,325 214,328 236,338"/><path d="M352,282 C324,277 298,280 276,290"/><path d="M352,306 C324,301 298,304 276,314"/><path d="M352,330 C324,325 298,328 276,338"/></g><path d="M136,372 C182,364 226,370 256,390 C286,370 330,364 376,372" fill="none" stroke="#C9A227" stroke-width="7" stroke-linecap="round"/></g></svg></div>
+  <div><div class="nf-eyebrow"><span class="nf-dot"></span>Teaching schedule · Today</div><h1 class="nf-title">Nursing</h1></div>
+  <div class="nf-sp"></div>
+  <div class="nf-meta"><div class="nf-date">Tuesday, 10 November 2026</div><div class="nf-org">Northfield University · School of Nursing</div></div>
+  <div class="nf-clock">10:15</div>
+</header>
+<div class="nf-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+<section class="nf-col"><div class="nf-colhead"><b>Year 1</b><span>3 classes</span></div>
+<div class="nf-card past" style="--c:#8FB8F0">
+  <div class="nf-time"><span>08:00 – 09:30</span></div>
+  <div class="nf-subj">Fundamentals of Nursing</div>
+  <div class="nf-row"><span class="nf-pill">Lecture</span><span class="nf-nw">All groups</span></div>
+  <div class="nf-where"><strong>Hall B</strong> · <span class="nf-nw">Dr. Julia Grant</span></div>
+</div>
+<div class="nf-card now" style="--c:#6CC3B0">
+  <div class="nf-time"><span>10:00 – 11:30</span><span class="nf-tag now">Now</span></div>
+  <div class="nf-subj">Anatomy for Nurses</div>
+  <div class="nf-row"><span class="nf-pill">Seminar</span><span class="nf-nw">Group 1</span></div>
+  <div class="nf-where"><strong>Room 1.08</strong> · <span class="nf-nw">Dr. Lucas Bennett</span></div><div class="nf-prog"><i style="width:17%"></i></div>
+</div>
+<div class="nf-card chg" style="--c:#E89470">
+  <div class="nf-time"><span class="nf-hl">12:30 – 15:00</span><span class="nf-tag chg">Time changed</span></div>
+  <div class="nf-subj">Clinical Skills</div>
+  <div class="nf-row"><span class="nf-pill">Lab</span><span class="nf-nw">Group 2</span></div>
+  <div class="nf-where"><strong>Skills Lab</strong> · <span class="nf-nw">Mark Turner, RN</span></div>
+</div>
+</section>
+<section class="nf-col"><div class="nf-colhead"><b>Year 2</b><span>2 classes</span></div>
+<div class="nf-card now" style="--c:#C79BE8">
+  <div class="nf-time"><span>08:00 – 12:00</span><span class="nf-tag now">Now</span></div>
+  <div class="nf-subj">Medical Nursing</div>
+  <div class="nf-row"><span class="nf-pill">Clinical</span><span class="nf-nw">Group 1</span></div>
+  <div class="nf-where"><strong>University Hospital</strong> · <span class="nf-nw">Sarah Lewis, RN</span></div><div class="nf-prog"><i style="width:56%"></i></div>
+</div>
+<div class="nf-card " style="--c:#8FB8F0">
+  <div class="nf-time"><span>13:00 – 14:30</span></div>
+  <div class="nf-subj">Pharmacology for Nurses</div>
+  <div class="nf-row"><span class="nf-pill">Lecture</span><span class="nf-nw">All groups</span></div>
+  <div class="nf-where"><strong>Hall B</strong> · <span class="nf-nw">Dr. James Whitfield</span></div>
+</div>
+</section>
+<section class="nf-col"><div class="nf-colhead"><b>Year 3</b><span>3 classes</span></div>
+<div class="nf-card " style="--c:#8FB8F0">
+  <div class="nf-time"><span>10:30 – 12:00</span></div>
+  <div class="nf-subj">Community Health</div>
+  <div class="nf-row"><span class="nf-pill">Lecture</span><span class="nf-nw">All groups</span></div>
+  <div class="nf-where"><strong>Room 2.20</strong> · <span class="nf-nw">Dr. Olivia Reed</span></div>
+</div>
+<div class="nf-card " style="--c:#6CC3B0">
+  <div class="nf-time"><span>12:30 – 14:00</span></div>
+  <div class="nf-subj">Care of Older Adults</div>
+  <div class="nf-row"><span class="nf-pill">Seminar</span><span class="nf-nw">Group 2</span></div>
+  <div class="nf-where"><strong>Room 2.20</strong> · <span class="nf-nw">Dr. Olivia Reed</span></div>
+</div>
+<div class="nf-card " style="--c:#C79BE8">
+  <div class="nf-time"><span>14:30 – 16:00</span></div>
+  <div class="nf-subj">Paediatric Nursing</div>
+  <div class="nf-row"><span class="nf-pill">Clinical</span><span class="nf-nw">Group 1</span></div>
+  <div class="nf-where"><strong>Children&#x27;s Ward</strong> · <span class="nf-nw">Emily Clarke, RN</span></div>
+</div>
+</section>
+</div>
+<footer class="nf-foot"><span class="nf-leg" style="--c:#8FB8F0"><i></i>Lecture</span><span class="nf-leg" style="--c:#6CC3B0"><i></i>Seminar</span><span class="nf-leg" style="--c:#E89470"><i></i>Lab</span><span class="nf-leg" style="--c:#C79BE8"><i></i>Clinical</span><div class="nf-sp"></div><div class="nf-note"><span class="nf-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4.5M12 17.2v.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span><b>Change today:</b> Clinical Skills (Year 1) starts 30 minutes later, at 12:30</span></div></footer>
+</div></div>

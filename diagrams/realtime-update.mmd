@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Admin
+    participant App as ASP.NET Core MVC
+    participant DB as SQL Server
+    participant Hub as SignalR hub
+    participant TV as TV player
+
+    Admin->>App: Reorder playlist / change settings / urgent notice
+    App->>DB: Save change
+    App->>Hub: Notify affected screens
+    Hub-->>TV: Push update
+    TV->>TV: Apply update without reloading

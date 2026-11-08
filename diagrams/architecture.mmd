@@ -1,0 +1,12 @@
+flowchart LR
+    Admin[Admin in browser] --> Nginx[Nginx Reverse Proxy]
+    TV[TV player<br/>Chromium kiosk] --> Nginx
+    Nginx --> App[ASP.NET Core MVC]
+
+    App --> DB[(SQL Server)]
+    App --> Media[Media library]
+    App --> Hub[SignalR hub]
+    Hub --> TV
+
+    ICS[ICS / Google Calendar sources] --> Sync[Calendar sync]
+    Sync --> DB
